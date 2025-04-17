@@ -89,6 +89,19 @@ export default function ApplicationModalContent({
         )}
       </div>
 
+      {application.applicationStatus === ApplicationStatus.APPROVED &&
+        application.issuedDocumentId && (
+          <div>
+            <p className="font-semibold mb-1">Issued Document:</p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-sm">
+                <Paperclip className="w-4 h-4 text-gray-500" />
+                <span>Download</span>
+              </li>
+            </ul>
+          </div>
+        )}
+
       <div className="mt-6">
         <label className="text-sm font-medium mb-1 block text-gray-700 dark:text-gray-300">
           Remarks
